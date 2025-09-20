@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shield VPN</title>
+  <meta name="description" content="Shield VPN - Fast & Secure VPN for privacy and freedom." />
+  <link rel="icon" href="/assets/images/shield_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0b132b; --fg:#ffffff; --acc:#00a6ff; --mut:#a6b0c3; }
+    * { box-sizing: border-box; }
+    html,body { margin:0; padding:0; font-family: 'Urbanist', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background: var(--bg); color: var(--fg); }
+    a { color: var(--acc); text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { display:flex; align-items:center; justify-content:space-between; }
+    header .brand { display:flex; align-items:center; gap:12px; }
+    header img { width:36px; height:36px; border-radius:8px; }
+    .hero { display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items:center; padding: 40px 0; }
+    .hero h1 { font-size: 40px; line-height: 1.1; margin: 0 0 14px; }
+    .hero p { color: var(--mut); font-size: 18px; margin: 0 0 24px; }
+    .btns { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { background: var(--acc); color: #001018; padding: 12px 18px; border-radius: 10px; font-weight: 700; }
+    .btn.alt { background: transparent; border:1px solid #1f2a44; color: var(--fg); }
+    .card { background: #111a35; border: 1px solid #1f2a44; border-radius: 16px; padding: 18px; }
+    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+    .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    footer { margin-top: 40px; padding: 20px 0; color: var(--mut); font-size: 14px; border-top: 1px solid #1f2a44; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="/assets/images/shield_logo.png" alt="Shield VPN" />
+        <strong>Shield VPN</strong>
+      </div>
+      <nav class="nav">
+        <a href="/privacy">Privacy</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="/terms">Terms</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Fast. Secure. Simple VPN.</h1>
+        <p>One-tap protection for your connection. Bypass restrictions, encrypt traffic, and browse privately with Shield VPN.</p>
+        <div class="btns">
+          <a class="btn" href="https://play.google.com/store/apps/dev?id=6375425433809003607" target="_blank" rel="noopener">Get it on Google Play</a>
+          <a class="btn alt" href="#features">Learn more</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="grid">
+          <div>
+            <h3>Auto server</h3>
+            <p class="mut">Best available server is auto-selected on app open.</p>
+          </div>
+          <div>
+            <h3>Ad-supported</h3>
+            <p class="mut">Free to use with respectful ads. Report only after disconnect.</p>
+          </div>
+          <div>
+            <h3>Restore state</h3>
+            <p class="mut">Reconnect or show connected state when you reopen.</p>
+          </div>
+          <div>
+            <h3>First-launch onboarding</h3>
+            <p class="mut">Simple onboarding shown once.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <div class="features">
+        <div class="card"><strong>1-tap connect</strong><p class="mut">Connect and disconnect quickly, with a polished UI.</p></div>
+        <div class="card"><strong>Server list</strong><p class="mut">Pick from multiple countries with flags.</p></div>
+        <div class="card"><strong>Session stats</strong><p class="mut">See download and upload speeds in realtime.</p></div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Shield VPN. <a href="mailto:vpnapp@technosofts.net">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
