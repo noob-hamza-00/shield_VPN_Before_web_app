@@ -1,0 +1,24 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    // Force stable byte-buddy version compiled with older Java to avoid Jetifier failure on class file version 68
+    configurations.configureEach { cfg ->
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'net.bytebuddy' && details.requested.name == 'byte-buddy') {
+                details.useVersion '1.14.14'
+            }
+        }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+// Removed evaluationDependsOn to avoid afterEvaluate timing issues with AGP 8+
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

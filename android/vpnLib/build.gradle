@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion 35
+    namespace = "de.blinkt.openvpn"
+
+    defaultConfig {
+        minSdkVersion 21
+    targetSdkVersion 35
+        
+        // Generate BuildConfig
+        buildConfigField "boolean", "DEBUG", "true"
+        buildConfigField "String", "BUILD_TYPE", "\"debug\""
+    }
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "DEBUG", "true"
+            buildConfigField "String", "BUILD_TYPE", "\"debug\""
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "DEBUG", "false"
+            buildConfigField "String", "BUILD_TYPE", "\"release\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    // Enable BuildConfig generation
+    buildFeatures {
+        buildConfig true
+        aidl true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
