@@ -5,6 +5,7 @@
   "rewrites": [
     { "source": "/", "destination": "/web-landing/index.html" },
     { "source": "/privacy", "destination": "/web-landing/privacy.html" },
-    { "source": "/terms", "destination": "/web-landing/terms.html" }
+    { "source": "/terms", "destination": "/web-landing/terms.html" },
+    { "source": "/desktop", "destination": "/web-landing/desktop.html" }
   ]
 }

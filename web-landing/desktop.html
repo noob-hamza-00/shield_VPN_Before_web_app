@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shield VPN Desktop (Windows Beta)</title>
+  <link rel="icon" href="/assets/images/shield_logo.png" />
+  <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0;color:#eaeef7;background:#0b132b}main{max-width:900px;margin:0 auto;padding:24px}h1{margin:16px 0}section{background:#111a35;border:1px solid #1f2a44;border-radius:16px;padding:16px;margin:12px 0}code{background:#0b1738;padding:2px 6px;border-radius:6px}</style>
+</head>
+<body>
+  <main>
+    <h1>Shield VPN Desktop (Windows Beta)</h1>
+    <section>
+      <p>
+        This desktop beta uses the official <strong>OpenVPN</strong> client to establish a system-wide VPN tunnel.
+        When connected, all apps including Chrome, Edge, and other browsers will use the VPN — so it “works on Chrome desktop” by tunneling the system network stack.
+      </p>
+    </section>
+
+    <section>
+      <h2>Requirements</h2>
+      <ol>
+        <li>Windows 10/11 (Admin user)</li>
+        <li><a href="https://openvpn.net/community-downloads/" target="_blank" rel="noopener">OpenVPN community client</a> installed</li>
+        <li>At least one Shield VPN server config (.ovpn)</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Quick Start</h2>
+      <ol>
+        <li>Install OpenVPN (above).</li>
+        <li>Download a server config from the Android app or request it via <a href="mailto:vpnapp@technosofts.net">vpnapp@technosofts.net</a>.</li>
+        <li>Right-click the OpenVPN tray icon → Import file → choose the .ovpn.</li>
+        <li>Click the tray icon → Connect. Enter username/password if prompted (provided with the config).</li>
+        <li>Once connected, open Chrome — your traffic is now routed via the VPN.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Automate (optional)</h2>
+      <p>You can automate connect/disconnect with OpenVPN's command line:</p>
+      <pre><code>openvpn-gui --command connect &lt;PROFILE_NAME&gt;
+openvpn-gui --command disconnect &lt;PROFILE_NAME&gt;</code></pre>
+      <p>Replace <code>&lt;PROFILE_NAME&gt;</code> with the name shown in OpenVPN GUI.</p>
+    </section>
+
+    <section>
+      <h2>Notes</h2>
+      <ul>
+        <li>This approach is the most reliable way to support Chrome/desktop today.</li>
+        <li>A native Flutter Desktop client is planned to provide a full UI and one-click connect experience.</li>
+        <li>If you need WireGuard support, we can provide .conf files and a similar flow using the WireGuard desktop app.</li>
+      </ul>
+    </section>
+
+    <p><a href="/">← Back to home</a></p>
+  </main>
+</body>
+</html>
