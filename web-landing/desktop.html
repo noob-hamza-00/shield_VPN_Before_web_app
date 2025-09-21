@@ -49,6 +49,24 @@
     </section>
 
     <section>
+      <h2>Verify it’s working</h2>
+      <ol>
+        <li>Visit <a href="https://whatismyipaddress.com" target="_blank" rel="noopener">whatismyipaddress.com</a> or <a href="https://ipleak.net" target="_blank" rel="noopener">ipleak.net</a>.</li>
+        <li>Confirm your IP and location match the selected VPN server.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li><strong>404 on this page?</strong> The site may not have redeployed yet. Refresh in 30–60 seconds or revisit later.</li>
+        <li><strong>Profile not found:</strong> Ensure the profile name matches exactly what the OpenVPN tray shows after importing your .ovpn file.</li>
+        <li><strong>Needs admin rights:</strong> The scripts auto-elevate; if you cancel, routes won’t be added and the tunnel won’t work.</li>
+        <li><strong>Still no tunnel:</strong> Open OpenVPN GUI manually, right‑click the profile, and choose Connect to see detailed logs.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Automate (optional)</h2>
       <p>You can automate connect/disconnect with OpenVPN's command line:</p>
       <pre><code>openvpn-gui --command connect &lt;PROFILE_NAME&gt;
